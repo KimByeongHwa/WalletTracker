@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.15;
     height: 100%;
     background-color: #F9F9F9;
-    width: 90vw;
+    width: 50vw;
     margin: 0 auto;
   }
 

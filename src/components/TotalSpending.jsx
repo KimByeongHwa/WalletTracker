@@ -4,7 +4,7 @@ import styled from "styled-components";
 function TotalSpending() {
   return (
     <Wrapper>
-      <h1>당신의 이번 달 총 지출금액은 100원 입니다.</h1>
+      <SpendingTitle>이번 달 총 지출 금액은 <br /><Strong>100원</Strong><br /> 입니다.</SpendingTitle>
     </Wrapper>
   );
 }
@@ -12,5 +12,18 @@ function TotalSpending() {
 export default TotalSpending;
 
 const Wrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 80px;
 `;
+
+const SpendingTitle = styled.h1`
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+`
+const Strong = styled.div`
+  border-bottom: 5px solid #c4dfaa;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 30px 0;;
+  padding-bottom: 4px;
+`

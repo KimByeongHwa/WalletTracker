@@ -6,7 +6,7 @@ function SpendingListAdder() {
   return (
     <Wrapper>
       <Input placeholder="지출 내역을 입력하세요."></Input>
-      <Button padding="12px 16px" color="#C4DFAA">
+      <Button size='large' color="#c4dfaa">
         추가
       </Button>
     </Wrapper>
@@ -16,8 +16,24 @@ function SpendingListAdder() {
 export default SpendingListAdder;
 
 const Wrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Input = styled.input``;
+const Input = styled.input`
+  margin-right: 30px;
+  margin-left: 60px;
+  border: none;
+  outline: none;
+  width: 27vw;
+  height: 3rem;
+  border-radius: 4px;
+  padding: 3px 16px;
+  background-color: #E8F3D6;
+  font-size: 16px;
+  font-family: 'Nanum Gothic', 'malgun gothic', AppleGothic, dotum, sans-serif;
+  font-weight: 600;
+  text-align: center;
+`;
