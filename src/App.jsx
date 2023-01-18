@@ -2,7 +2,7 @@ import React from "react";
 import { Reset } from "styled-reset";
 import { createGlobalStyle } from "styled-components";
 import TotalSpending from "./components/TotalSpending";
-import SpendingList from "./components/SpendingList";
+import SpendingDetails from "./components/SpendingDetails";
 import SpendingListAdder from "./components/SpendingListAdder";
 import MonthlySpending from "./components/MonthlySpending";
 
@@ -12,8 +12,8 @@ function App() {
       <Reset />
       <GlobalStyle />
       <TotalSpending />
-      <SpendingList />
       <SpendingListAdder />
+      <SpendingDetails />
       <MonthlySpending />
     </>
   );
