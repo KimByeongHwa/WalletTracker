@@ -5,17 +5,18 @@ import TotalSpending from "./components/TotalSpending";
 import SpendingDetails from "./components/SpendingDetails";
 import SpendingListAdder from "./components/SpendingListAdder";
 import MonthlySpending from "./components/MonthlySpending";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
-    <>
+    <RecoilRoot>
       <Reset />
       <GlobalStyle />
       <TotalSpending />
       <SpendingListAdder />
       <SpendingDetails />
       <MonthlySpending />
-    </>
+    </RecoilRoot>
   );
 }
 
@@ -32,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
     color: #333;
     line-height: 1.15;
     height: 100%;
-    background-color: #F9F9F9;
     width: 50vw;
     margin: 0 auto;
   }

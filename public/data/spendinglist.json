@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "date": "20230109",
+        "description": "쇼핑",
+        "amount": 250000
+    },
+    {
+        "id": 2,
+        "date": "20230115",
+        "description": "아구찜",
+        "amount": 40000
+    },
+    {
+        "id": 3,
+        "date": "20230121",
+        "description": "커피",
+        "amount": 5500
+    }
+]

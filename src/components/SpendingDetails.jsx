@@ -5,7 +5,8 @@ import Button from "./Button";
 function SpendingDetails() {
   return (
     <Wrapper>
-      <LINE>
+      소비 내역
+      {/* <LINE>
         <LI>쇼핑</LI>
         <Button>삭제</Button>
       </LINE>
@@ -16,7 +17,7 @@ function SpendingDetails() {
       <LINE>
         <LI>커피</LI>
         <Button>삭제</Button>
-      </LINE>
+      </LINE> */}
     </Wrapper>
   );
 }
@@ -32,13 +33,13 @@ const Wrapper = styled.div`
 
 const LINE = styled.div`
   display: flex;
+  margin-bottom: 30px;
+  :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const LI = styled.li`
   list-style: none;
-  margin-bottom: 30px;
-
-  :last-child {
-    margin-bottom: 0;
-  }
+  margin-right: 15px;
 `;
