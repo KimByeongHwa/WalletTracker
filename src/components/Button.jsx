@@ -1,9 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-function Button({ children, size, color }) {
+function Button({ children, size, color, padding, margin }) {
   return (
-    <StyledButton size={size} color={color}>
+    <StyledButton size={size} color={color} padding={padding} margin={margin}>
       {children}
     </StyledButton>
   );
@@ -31,7 +31,8 @@ const StyledButton = styled.button`
   font-family: "Nanum Gothic", "malgun gothic", AppleGothic, dotum, sans-serif;
   font-weight: 600;
   background: ${(props) => props.color};
-  /* padding: ${(props) => props.padding}; */
+  padding: ${(props) => props.padding};
+  margin: ${(props) => props.margin};
   transition: all 0.5s;
 
   ${ButtonSize}

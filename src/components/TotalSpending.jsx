@@ -17,7 +17,7 @@ export default TotalSpending;
 
 const Wrapper = styled.div`
   margin-top: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 const SpendingTitle = styled.h1`

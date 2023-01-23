@@ -14,8 +14,8 @@ function App() {
       <GlobalStyle />
       <TotalSpending />
       <SpendingListAdder />
-      <SpendingDetails />
-      <MonthlySpending />
+      {/* <SpendingDetails /> */}
+      {/* <MonthlySpending /> */}
     </RecoilRoot>
   );
 }
