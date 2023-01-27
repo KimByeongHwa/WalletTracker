@@ -4,8 +4,12 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-function CustomButton({ children, size, color }) {
-    return <button className={cx("CustomButton", size, color)}>{children}</button>;
+function CustomButton({ children, size, color, onClick }) {
+    return (
+        <button className={cx("CustomButton", size, color)} onClick={onClick}>
+            {children}
+        </button>
+    );
 }
 
 CustomButton.defaultProps = {

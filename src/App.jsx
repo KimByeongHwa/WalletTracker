@@ -11,7 +11,7 @@ function App() {
         <RecoilRoot>
             <TotalSpending />
             <SpendingListAdder />
-            {/* <SpendingDetails /> */}
+            <SpendingDetails />
             {/* <MonthlySpending /> */}
         </RecoilRoot>
     );
