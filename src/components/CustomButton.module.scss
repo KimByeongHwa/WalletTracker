@@ -1,0 +1,40 @@
+$green: #a9e34b;
+$gray: #dee2e6;
+
+@mixin button-color($color) {
+    background: $color;
+
+    &:hover {
+        background: darken($color, 15%);
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}
+
+.CustomButton {
+    display: block;
+    height: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-family: "Nanum Gothic", "malgun gothic", AppleGothic, dotum, sans-serif;
+    font-weight: 600;
+    background: $green;
+    transition: all 0.5s;
+
+    // 사이즈 관리
+    &.big {
+        font-size: 1.5rem;
+        height: 2.5rem;
+        width: 4rem;
+    }
+
+    //색상 관리
+    &.green {
+        @include button-color($green);
+    }
+
+    &.gray {
+        @include button-color($gray);
+    }
+}
