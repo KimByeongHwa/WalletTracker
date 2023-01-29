@@ -1,14 +1,32 @@
 import React, { useState } from "react";
 import styles from "./SpendingListAdder.module.scss";
 import CustomButton from "./CustomButton";
-import DatePicker from "react-datepicker";
 import Calendar from "./Calendar";
 
 function SpendingListAdder() {
   let [visible, setVisible] = useState(true); // togglelabel과 inputForm을 토글하기 위해
+  let [spendingItem, setSpendingItem] = useState("");
+  let [spendingAmount, setSpendingAmount] = useState(0);
 
   function handleToggle() {
     setVisible((prev) => !prev);
+  }
+
+  function handleSpendingItem(e) {
+    const userInput = e.target.value;
+    setSpendingItem(userInput);
+    console.log(userInput);
+  }
+
+  function handleSpendingAmount(e) {
+    const userInput = e.target.value;
+    setSpendingAmount(userInput);
+    console.log(userInput);
+  }
+
+  function addSpendingList() {
+    console.log("소비 항목: ", spendingItem);
+    console.log("소비 금액: ", spendingAmount);
   }
 
   return (
@@ -24,16 +42,15 @@ function SpendingListAdder() {
         <div className={styles.inputForm}>
           <div className={styles.line}>
             <span className={styles.inputTitle}>소비 날짜</span>
-            {/* <input className={styles.inputContents} placeholder="YYYY/MM/DD"> */}
             <Calendar />
-            {/* </input> */}
           </div>
 
           <div className={styles.line}>
             <span className={styles.inputTitle}>소비 항목</span>
             <input
               className={styles.inputContents}
-              placeholder="Description"
+              placeholder="뭐한다고 돈 쓰셨어요?"
+              onChange={handleSpendingItem}
             ></input>
           </div>
 
@@ -41,13 +58,16 @@ function SpendingListAdder() {
             <span className={styles.inputTitle}>소비 금액</span>
             <input
               className={styles.inputContents}
-              placeholder="Amount"
+              placeholder="숫자만 입력해주세요."
+              onChange={handleSpendingAmount}
             ></input>
           </div>
 
           <div className={styles.buttons}>
             <div className={styles.label}>
-              <CustomButton size="big">확인</CustomButton>
+              <CustomButton size="big" onClick={addSpendingList}>
+                확인
+              </CustomButton>
             </div>
             <div className={styles.label}>
               <CustomButton size="big" color="gray" onClick={handleToggle}>
