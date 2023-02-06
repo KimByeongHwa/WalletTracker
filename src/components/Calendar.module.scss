@@ -1,21 +1,23 @@
 .Calendar {
-  input {
-    outline: none;
-    border: none;
-    width: 15vw;
-    height: 2.5rem;
-    border-radius: 4px;
-    padding: 3px 16px;
-    margin: 5px 0 5px 10px;
-    background-color: #e9fac8;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-  }
+    input {
+        outline: none;
+        border: none;
+        width: 15vw;
+        height: 2.5rem;
+        border-radius: 4px;
+        padding: 3px 16px;
+        margin: 5px 0 5px 10px;
+        background-color: #e9fac8;
+        font-size: 16px;
+        font-weight: 800;
+        text-align: center;
+        cursor: pointer;
+        font-family: "Nanum Gothic", "malgun gothic", AppleGothic, dotum, sans-serif;
+        color: #333;
+    }
 
-  :focus {
-    outline: none;
-    border: none;
-  }
+    :focus {
+        outline: none;
+        border: none;
+    }
 }
