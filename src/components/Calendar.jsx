@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Calendar.module.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/locale";
+import { useRecoilState } from "recoil";
+import { spendingDateState } from "../recoil/spendingDateState";
 
-function Calendar(props) {
-    let [date, setDate] = useState(new Date());
+function Calendar() {
+    const [spendingDate, setSpendingDate] = useRecoilState(spendingDateState);
 
     return (
         <div className={styles.Calendar}>
@@ -14,8 +16,8 @@ function Calendar(props) {
                 locale={ko}
                 dateFormat="yy.MM.dd (eee)"
                 disabledKeyboardNavigation
-                selected={date}
-                onChange={(date) => setDate(date)}
+                selected={spendingDate}
+                onChange={(date) => setSpendingDate(date)}
             />
         </div>
     );
