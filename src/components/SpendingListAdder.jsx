@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
-import styles from "./SpendingListAdder.module.scss";
-import CustomButton from "./CustomButton";
-import Calendar from "./Calendar";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { spendingDateState } from "../recoil/spendingDateState";
-import { spendingListState } from "../recoil/spendingListState";
-import { monthlyTotalAmountState } from "../recoil/monthlyTotalAmountState";
+import React, { useEffect, useState } from 'react';
+import styles from './SpendingListAdder.module.scss';
+import CustomButton from './CustomButton';
+import Calendar from './Calendar';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { spendingDateState } from '../recoil/spendingDateState';
+import { spendingListState } from '../recoil/spendingListState';
+import { monthlyTotalAmountState } from '../recoil/monthlyTotalAmountState';
 
 function SpendingListAdder() {
     const [visible, setVisible] = useState(true); // togglelabel과 inputForm을 토글하기 위해
     const spendingDate = useRecoilValue(spendingDateState);
-    const [spendingItem, setSpendingItem] = useState("");
-    const [spendingAmount, setSpendingAmount] = useState(0);
+    const [spendingItem, setSpendingItem] = useState('');
+    const [spendingAmount, setSpendingAmount] = useState('');
     const [spendingList, setSpendingList] = useRecoilState(spendingListState);
     const [monthlyTotalAmount, setMonthlyTotalAmount] = useRecoilState(monthlyTotalAmountState);
 
     useEffect(() => {
-        fetch("http://localhost:3000/data/spendinglist.json", {
-            method: "GET",
+        fetch('http://localhost:3000/data/spendinglist.json', {
+            method: 'GET',
         })
             .then((res) => res.json())
             .then((data) => {
@@ -30,8 +30,8 @@ function SpendingListAdder() {
     }
 
     let year = spendingDate.getFullYear().toString();
-    let month = (spendingDate.getMonth() + 1).toString().padStart(2, "0");
-    let day = spendingDate.getDate().toString().padStart(2, "0");
+    let month = (spendingDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = spendingDate.getDate().toString().padStart(2, '0');
     let handledSpendingDate = year + month + day;
 
     function handleSpendingItem(e) {
@@ -46,7 +46,7 @@ function SpendingListAdder() {
         // console.log(userInput);
     }
 
-    function addSpendingList() {
+    function addSpendingList(e) {
         const spending = {
             date: handledSpendingDate,
             description: spendingItem,
@@ -54,27 +54,39 @@ function SpendingListAdder() {
         };
 
         setSpendingList([...spendingList, spending]);
-
-        // console.log(spending);
-        console.log(spendingList);
+        setSpendingItem('');
+        setSpendingAmount('');
     }
 
-    function monthlyTotalAmountCounter() {
+    useEffect(() => {
+        console.log('spendingList:', spendingList);
+    }, [spendingList]);
+
+    useEffect(() => {
+        // ing
+        let found = [];
+        found = spendingList.filter((e) => {
+            return e === e.date.slice(4, 6);
+        });
+        console.log('found:', found);
+    });
+
+    function countMonthlyTotalAmount() {
         let totalAmount = 0;
 
         const now = new Date();
-        let nowMonth = (now.getMonth() + 1).toString().padStart(2, "0");
+        let nowMonth = (now.getMonth() + 1).toString().padStart(2, '0');
+        console.log('nowMonth: ', nowMonth);
 
-        console.log("List: ", spendingList);
-        console.log("nowMonth: ", nowMonth);
-
-        const found = spendingList.find((list) => list.date.slice(4, 6) === nowMonth);
+        let found = [];
+        // FIXME. 여기서 spendingList가 비동기 처리로 인해서 한박자 늦게 먹힘. 처리 필요 => 바로 위에 found 부터 가져오자.
+        found = spendingList.filter((e) => {
+            console.log(e);
+        });
         console.log(found);
 
-        totalAmount += found.amount;
-
-        setMonthlyTotalAmount(totalAmount.toLocaleString("ko-KR"));
-        console.log(monthlyTotalAmount);
+        setMonthlyTotalAmount(totalAmount.toLocaleString('ko-KR'));
+        console.log('monthlyTotalAmount:', monthlyTotalAmount);
     }
 
     return (
@@ -95,28 +107,38 @@ function SpendingListAdder() {
 
                     <div className={styles.line}>
                         <span className={styles.inputTitle}>소비 항목</span>
-                        <input className={styles.inputContents} placeholder="뭐한다고 돈 쓰셨어요?" onChange={handleSpendingItem}></input>
+                        <input
+                            className={styles.inputContents}
+                            placeholder='뭐한다고 돈 쓰셨어요?'
+                            onChange={handleSpendingItem}
+                            value={spendingItem}
+                        ></input>
                     </div>
 
                     <div className={styles.line}>
                         <span className={styles.inputTitle}>소비 금액</span>
-                        <input className={styles.inputContents} placeholder="숫자만 입력해주세요." onChange={handleSpendingAmount}></input>
+                        <input
+                            className={styles.inputContents}
+                            placeholder='숫자만 입력해주세요.'
+                            onChange={handleSpendingAmount}
+                            value={spendingAmount}
+                        ></input>
                     </div>
 
                     <div className={styles.buttons}>
                         <div className={styles.label}>
                             <CustomButton
-                                size="big"
+                                size='big'
                                 onClick={() => {
                                     addSpendingList();
-                                    monthlyTotalAmountCounter();
+                                    countMonthlyTotalAmount();
                                 }}
                             >
                                 확인
                             </CustomButton>
                         </div>
                         <div className={styles.label}>
-                            <CustomButton size="big" color="gray" onClick={handleToggle}>
+                            <CustomButton size='big' color='gray' onClick={handleToggle}>
                                 취소
                             </CustomButton>
                         </div>
