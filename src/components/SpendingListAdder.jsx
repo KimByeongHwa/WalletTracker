@@ -69,15 +69,6 @@ function SpendingListAdder() {
   // console.log("nowMonth: ", nowMonth);
 
   useEffect(() => {
-    // let found = [];
-    // found = spendingList.filter((e) => {
-    //   console.log(e.amount, e.date.slice(4, 6), nowMonth);
-    //   if (e.date.slice(4, 6) === nowMonth) {
-    //     console.log("ok");
-    //   }
-    // });
-    // console.log("found:", found);
-
     countMonthlyTotalAmount();
   });
 
@@ -87,13 +78,17 @@ function SpendingListAdder() {
     let found = [];
     // FIXME. 여기서 spendingList가 비동기 처리로 인해서 한박자 늦게 먹힘. 처리 필요 => 바로 위에 found 부터 가져오자.
     found = spendingList.filter((e) => {
-      console.log(e.amount, e.date.slice(4, 6), nowMonth);
+      // console.log(e.amount, e.date.slice(4, 6), nowMonth);
       if (e.date.slice(4, 6) === nowMonth) {
-        found.push(e.amount.toString());
-        console.log("ok");
+        return e;
       }
     });
-    console.log("found:", found);
+    // console.log("found:", found);
+
+    found.map((e) => {
+      totalAmount += e.amount;
+    });
+    // console.log(totalAmount);
 
     setMonthlyTotalAmount(totalAmount.toLocaleString("ko-KR"));
     // console.log("monthlyTotalAmount:", monthlyTotalAmount);
