@@ -24,12 +24,14 @@ Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹 <br>
 - 입력한 데이터들을 하나의 객체 데이터로 묶어서 `spendingList` 배열에 추가하는 방식
 - 계속해서 변하는 spendingList 값이 즉시 반영되어 표시되도록<br>
   `setSpendingList([...spendingList, spending]);`
+  
   <br>
 
 2️⃣ 추가 소비 항목 표시
 
 - `DatePicker`에 setState를 걸어 선택한 날짜 값을 가져왔다.
 - 날짜 데이터를 string 형태로 받아와 slice 하여 년, 월, 일 형태로 표시
+
   <br>
 
 3️⃣ 당 월 소비 총액 표시
