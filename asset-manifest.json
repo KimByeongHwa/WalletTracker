@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/WalletTracker/static/css/main.d8fdefca.css",
-    "main.js": "/WalletTracker/static/js/main.2b1cfae9.js",
-    "index.html": "/WalletTracker/index.html",
-    "main.d8fdefca.css.map": "/WalletTracker/static/css/main.d8fdefca.css.map",
-    "main.2b1cfae9.js.map": "/WalletTracker/static/js/main.2b1cfae9.js.map"
+    "main.css": "/static/css/main.d8fdefca.css",
+    "main.js": "/static/js/main.e8a6e220.js",
+    "index.html": "/index.html",
+    "main.d8fdefca.css.map": "/static/css/main.d8fdefca.css.map",
+    "main.e8a6e220.js.map": "/static/js/main.e8a6e220.js.map"
   },
   "entrypoints": [
     "static/css/main.d8fdefca.css",
-    "static/js/main.2b1cfae9.js"
+    "static/js/main.e8a6e220.js"
   ]
 }
