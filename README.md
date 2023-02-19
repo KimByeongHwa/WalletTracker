@@ -18,7 +18,7 @@ Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹 <br>
 
 ## 📐 주요 기능
 
-1️⃣. 소비 항목 추가
+1️⃣ 소비 항목 추가
 
 - 소비 항목을 `spendingList`를 모든 컴포넌트에서 사용 가능하도록 `Recoil State`로 정의
 - 입력한 데이터들을 하나의 객체 데이터로 묶어서 `spendingList` 배열에 추가하는 방식
@@ -26,13 +26,13 @@ Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹 <br>
   `setSpendingList([...spendingList, spending]);`
   <br>
 
-2️⃣ . 추가 소비 항목 표시
+2️⃣ 추가 소비 항목 표시
 
 - `DatePicker`에 setState를 걸어 선택한 날짜 값을 가져왔다.
 - 날짜 데이터를 string 형태로 받아와 slice 하여 년, 월, 일 형태로 표시
   <br>
 
-3️⃣ . 당 월 소비 총액 표시
+3️⃣ 당 월 소비 총액 표시
 
 - `new Date()` 객체를 이용하여 현 시점 month를 구한다.
 - 소비 날짜(string)을 slice하여 현 시점의 month와 비교
