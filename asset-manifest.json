@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wallettracker/static/css/main.d8fdefca.css",
+    "main.js": "/wallettracker/static/js/main.e7b0370b.js",
+    "index.html": "/wallettracker/index.html",
+    "main.d8fdefca.css.map": "/wallettracker/static/css/main.d8fdefca.css.map",
+    "main.e7b0370b.js.map": "/wallettracker/static/js/main.e7b0370b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8fdefca.css",
+    "static/js/main.e7b0370b.js"
+  ]
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "date": "20230109",
+        "description": "코트",
+        "amount": 250000
+    },
+    {
+        "date": "20230115",
+        "description": "아구찜",
+        "amount": 40000
+    },
+    {
+        "date": "20230121",
+        "description": "커피",
+        "amount": 5500
+    }
+]
