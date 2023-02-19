@@ -1,6 +1,6 @@
 # 💸 WalletTracker
 
-Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹
+Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹 <br>
 : https://kimbyeonghwa.github.io/WalletTracker
 
 <br>
