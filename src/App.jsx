@@ -1,10 +1,9 @@
-import React from "react";
-import TotalSpending from "./components/TotalSpending";
-import SpendingListAdder from "./components/SpendingListAdder";
-import SpendingDetails from "./components/SpendingDetails";
-import MonthlySpending from "./components/MonthlySpending";
-import { RecoilRoot } from "recoil";
-import "./reset.css";
+import React from 'react';
+import TotalSpending from './components/TotalSpending';
+import SpendingListAdder from './components/SpendingListAdder';
+import SpendingDetails from './components/SpendingDetails';
+import { RecoilRoot } from 'recoil';
+import './reset.css';
 
 function App() {
     return (
@@ -12,7 +11,6 @@ function App() {
             <TotalSpending />
             <SpendingListAdder />
             <SpendingDetails />
-            {/* <MonthlySpending /> */}
         </RecoilRoot>
     );
 }
