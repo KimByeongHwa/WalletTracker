@@ -42,6 +42,9 @@ Recoil과 SCSS를 사용해보기 위해 만든 가계부 웹 <br>
 -   totalAmount를 setState()에 담아준다.
 -   위 동작을 수행하는 함수를 `useEffect()`에 담아 useState()의 비동기적 특성에서 발생하는, 한 박자 늦게 보이는 문제점 해결
 
+<br>
+<br>
+
 ## 🔧 개선해야 할 점
 
 -   소비 항목 추가/삭제 기능 추가
