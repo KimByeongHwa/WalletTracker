@@ -73,9 +73,9 @@ function SpendingListAdder() {
     let nowMonth = (now.getMonth() + 1).toString().padStart(2, '0');
     // console.log("nowMonth: ", nowMonth);
 
-    useEffect(() => {
-        countMonthlyTotalAmount();
-    });
+    // useEffect(() => {
+    countMonthlyTotalAmount();
+    // });
 
     function countMonthlyTotalAmount() {
         let totalAmount = 0;
@@ -118,8 +118,9 @@ function SpendingListAdder() {
                         <span className={styles.inputTitle}>소비 항목</span>
                         <input
                             className={styles.inputContents}
-                            placeholder='뭐한다고 돈 쓰셨어요?'
+                            placeholder="뭐한다고 돈 쓰셨어요?"
                             onChange={handleSpendingItem}
+                            onKeyDown={handleEnter}
                             value={spendingItem}
                         ></input>
                     </div>
@@ -128,7 +129,7 @@ function SpendingListAdder() {
                         <span className={styles.inputTitle}>소비 금액</span>
                         <input
                             className={styles.inputContents}
-                            placeholder='숫자만 입력해주세요.'
+                            placeholder="숫자만 입력해주세요."
                             onChange={handleSpendingAmount}
                             onKeyDown={handleEnter}
                             value={spendingAmount}
@@ -138,7 +139,7 @@ function SpendingListAdder() {
                     <div className={styles.buttons}>
                         <div className={styles.label}>
                             <CustomButton
-                                size='big'
+                                size="big"
                                 onClick={() => {
                                     addSpendingList();
                                 }}
@@ -147,7 +148,7 @@ function SpendingListAdder() {
                             </CustomButton>
                         </div>
                         <div className={styles.label}>
-                            <CustomButton size='big' color='gray' onClick={handleToggle}>
+                            <CustomButton size="big" color="gray" onClick={handleToggle}>
                                 취소
                             </CustomButton>
                         </div>

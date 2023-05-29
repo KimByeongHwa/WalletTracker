@@ -16,8 +16,6 @@ function SpendingDetails() {
             });
     }, []);
 
-    function deleteSpendingList() {}
-
     return (
         <div className={styles.SpendingDetails}>
             <div className={styles.title}>
